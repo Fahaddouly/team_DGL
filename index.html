@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DGL - Développement et Génie Logiciel | IPSMART</title>
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -23,21 +22,18 @@
     }
 
     header {
-      background-color: #004a99;
+      background: url('https://images.unsplash.com/photo-1581091012184-7cddc3e36c54?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
-      background-image: url('https://images.unsplash.com/photo-1531497865144-0464ef8fb9a3?auto=format&fit=crop&w=1200&q=80');
-      background-size: cover;
-      background-position: center;
+      padding: 4rem 2rem;
       position: relative;
     }
 
-    header::after {
+    header::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
     }
 
     header h1, header p {
@@ -46,13 +42,14 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
       animation: fadeInDown 1s ease-in-out;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      font-style: italic;
       animation: fadeInUp 1s ease-in-out;
     }
 
@@ -62,14 +59,14 @@
       background-color: #002f6c;
       display: flex;
       justify-content: center;
-      padding: 0.7rem 1rem;
-      z-index: 10;
+      padding: 0.7rem;
+      z-index: 100;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1.2rem;
+      margin: 0 1.5rem;
       font-weight: bold;
       position: relative;
     }
@@ -81,7 +78,7 @@
       height: 2px;
       background-color: white;
       left: 0;
-      bottom: -3px;
+      bottom: -4px;
       transition: 0.3s;
     }
 
@@ -91,10 +88,10 @@
 
     section {
       padding: 3rem 2rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(50px);
       transition: all 1s ease;
     }
 
@@ -103,28 +100,28 @@
       transform: translateY(0);
     }
 
-    .intro {
-      text-align: center;
+    .intro, .callout {
       background-color: #e1efff;
       border-radius: 10px;
       padding: 2rem;
-      margin-top: 2rem;
+      text-align: center;
     }
 
-    .features, .testimonials {
+    .features, .objectives, .courses, .career, .activities {
       background-color: #f7fbff;
       border-left: 5px solid #007acc;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
       border-radius: 10px;
       margin-top: 2rem;
     }
 
-    .features ul {
+    ul {
       list-style-type: none;
+      padding-left: 1rem;
     }
 
-    .features li {
-      padding: 0.6rem 0;
+    li {
+      margin-bottom: 0.7rem;
       font-weight: 500;
     }
 
@@ -138,7 +135,7 @@
     button {
       background-color: #007acc;
       color: white;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.8rem;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
@@ -153,38 +150,28 @@
 
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       background-color: #00305e;
       color: white;
-      margin-top: 2rem;
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         gap: 0.5rem;
+      }
+      header h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -193,67 +180,92 @@
 
   <header>
     <h1>Filière DGL - Développement et Génie Logiciel</h1>
-    <p>IPSMART - L’excellence au service du numérique</p>
+    <p>L’univers des talents numériques</p>
   </header>
 
   <nav>
-    <a href="#about">À propos</a>
-    <a href="#benefits">Avantages</a>
-    <a href="#testimonials">Témoignages</a>
+    <a href="#about">Présentation</a>
+    <a href="#objectives">Objectifs</a>
+    <a href="#courses">Modules</a>
+    <a href="#career">Débouchés</a>
+    <a href="#activities">Vie étudiante</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>À propos de la filière</h2>
+  <section id="about" class="intro">
+    <h2>À propos de la filière DGL</h2>
     <p>
-      La filière Développement et Génie Logiciel (DGL) forme des ingénieurs du numérique capables de créer des logiciels performants, des applications mobiles et des systèmes d’information modernes. Cette formation à IPSMART repose sur une pédagogie active, orientée projet et axée sur l’innovation.
+      La filière DGL forme les experts du développement d’applications, du web à l’IA. À IPSMART, l’innovation et la rigueur sont au cœur de notre pédagogie. Que vous rêviez de devenir développeur, architecte logiciel ou entrepreneur numérique, cette filière est faite pour vous !
     </p>
-    <button>En savoir plus</button>
+    <button>S'inscrire maintenant</button>
   </section>
 
-  <section id="benefits" class="features">
-    <h2>Avantages de la filière DGL</h2>
+  <section id="objectives" class="objectives">
+    <h2>Objectifs de la formation</h2>
     <ul>
-      <li>🔧 Formation 70% pratique</li>
-      <li>🎓 Encadrement par des professionnels du numérique</li>
-      <li>🌐 Ouverture à l’international</li>
-      <li>💼 Stages et opportunités d’emploi</li>
-      <li>🚀 Participation à des hackathons et projets réels</li>
+      <li>💡 Acquérir une solide base en algorithmique, programmation et architecture logicielle</li>
+      <li>💼 Répondre aux besoins réels des entreprises du numérique</li>
+      <li>🌍 Encourager la créativité, l’entrepreneuriat et l’ouverture internationale</li>
+      <li>🧠 Développer des solutions innovantes à impact social et économique</li>
     </ul>
   </section>
 
-  <section id="testimonials" class="testimonials">
-    <h2>Témoignages d’étudiants</h2>
-    <p class="testimonial">"J’ai appris à créer des applications dès la première année. IPSMART m’a donné confiance en moi." - Aïcha S.</p>
-    <p class="testimonial">"Grâce à la filière DGL, j’ai décroché un stage chez une startup tech de Bamako." - Oumar T.</p>
+  <section id="courses" class="courses">
+    <h2>Matières enseignées</h2>
+    <ul>
+      <li>✔️ Programmation Web & Mobile (HTML, CSS, JS, React, Flutter...)</li>
+      <li>✔️ Bases de données & Big Data</li>
+      <li>✔️ Génie logiciel & DevOps</li>
+      <li>✔️ Intelligence Artificielle & Machine Learning</li>
+      <li>✔️ Sécurité informatique & Réseaux</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📍 IPSMART, Faladié-Séma, Bamako, Mali</p>
-    <p>📧 contact@ipsmart.ml</p>
-    <p>📞 +223 70 00 00 00</p>
-    <button>Nous écrire</button>
+  <section id="career" class="career">
+    <h2>Débouchés professionnels</h2>
+    <ul>
+      <li>👨‍💻 Développeur Front-End / Back-End / Full Stack</li>
+      <li>🧑‍💼 Ingénieur Logiciel ou Architecte Cloud</li>
+      <li>🌐 Consultant IT ou DevOps Engineer</li>
+      <li>🚀 Créateur de Startup Technologique</li>
+    </ul>
+  </section>
+
+  <section id="activities" class="activities">
+    <h2>Vie étudiante et activités</h2>
+    <ul>
+      <li>🏆 Participation à des hackathons et concours nationaux</li>
+      <li>🤝 Clubs tech, coding nights et bootcamps</li>
+      <li>🎓 Partenariats avec des entreprises locales et internationales</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="callout">
+    <h2>Nous contacter</h2>
+    <p>📍 IPSMART, Faladié-Séma, Bamako - Mali</p>
+    <p>📧 Email : contact@ipsmart.ml</p>
+    <p>📞 Téléphone : +223 70 00 00 00</p>
+    <button>Envoyer un message</button>
   </section>
 
   <footer>
-    <p>&copy; 2025 IPSMART | Tous droits réservés - Filière DGL</p>
+    <p>&copy; 2025 IPSMART | Filière Développement & Génie Logiciel</p>
+    <p>Créé avec passion pour former les talents du numérique</p>
   </footer>
 
   <script>
     // Animation au scroll
     const sections = document.querySelectorAll("section");
-
     window.addEventListener("scroll", () => {
-      const triggerBottom = window.innerHeight * 0.9;
-
+      const trigger = window.innerHeight * 0.9;
       sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) {
           section.classList.add("visible");
         }
       });
     });
   </script>
+
 </body>
 </html>
