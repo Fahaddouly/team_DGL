@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DGL - Développement et Génie Logiciel | IPSMART</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #004a99;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      background-image: url('https://images.unsplash.com/photo-1531497865144-0464ef8fb9a3?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #002f6c;
+      display: flex;
+      justify-content: center;
+      padding: 0.7rem 1rem;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      left: 0;
+      bottom: -3px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      text-align: center;
+      background-color: #e1efff;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .features, .testimonials {
+      background-color: #f7fbff;
+      border-left: 5px solid #007acc;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+    }
+
+    .features ul {
+      list-style-type: none;
+    }
+
+    .features li {
+      padding: 0.6rem 0;
+      font-weight: 500;
+    }
+
+    .testimonial {
+      margin: 1rem 0;
+      font-style: italic;
+      border-left: 3px solid #007acc;
+      padding-left: 1rem;
+    }
+
+    button {
+      background-color: #007acc;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #00305e;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Filière DGL - Développement et Génie Logiciel</h1>
+    <p>IPSMART - L’excellence au service du numérique</p>
+  </header>
+
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#benefits">Avantages</a>
+    <a href="#testimonials">Témoignages</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>À propos de la filière</h2>
+    <p>
+      La filière Développement et Génie Logiciel (DGL) forme des ingénieurs du numérique capables de créer des logiciels performants, des applications mobiles et des systèmes d’information modernes. Cette formation à IPSMART repose sur une pédagogie active, orientée projet et axée sur l’innovation.
+    </p>
+    <button>En savoir plus</button>
+  </section>
+
+  <section id="benefits" class="features">
+    <h2>Avantages de la filière DGL</h2>
+    <ul>
+      <li>🔧 Formation 70% pratique</li>
+      <li>🎓 Encadrement par des professionnels du numérique</li>
+      <li>🌐 Ouverture à l’international</li>
+      <li>💼 Stages et opportunités d’emploi</li>
+      <li>🚀 Participation à des hackathons et projets réels</li>
+    </ul>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Témoignages d’étudiants</h2>
+    <p class="testimonial">"J’ai appris à créer des applications dès la première année. IPSMART m’a donné confiance en moi." - Aïcha S.</p>
+    <p class="testimonial">"Grâce à la filière DGL, j’ai décroché un stage chez une startup tech de Bamako." - Oumar T.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📍 IPSMART, Faladié-Séma, Bamako, Mali</p>
+    <p>📧 contact@ipsmart.ml</p>
+    <p>📞 +223 70 00 00 00</p>
+    <button>Nous écrire</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IPSMART | Tous droits réservés - Filière DGL</p>
+  </footer>
+
+  <script>
+    // Animation au scroll
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.9;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
